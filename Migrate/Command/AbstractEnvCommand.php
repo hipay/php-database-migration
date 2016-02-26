@@ -72,7 +72,7 @@ class AbstractEnvCommand extends AbstractComand
         $envFile = $locator->locate($env . '.yml');
 
         $loader = new Yaml();
-        $conf = $loader->parse($envFile);
+        $conf = $loader->parse(file_get_contents($envFile));
 
         $this->config = $conf;
 
